@@ -1,0 +1,22 @@
+<div class="search-container">
+<mat-toolbar class="toolbar">
+  <span class="title"> Rick and Morty</span>
+
+
+    <form routerLink class="search-form" (ngSubmit)="onSubmit()">
+      
+      <input 
+      class="search-input"
+      type="text"
+      name="search" 
+      ngModel
+      placeholder="Search Characters"/>
+  
+      <button class="search-button">Search</button>
+  </form>
+  
+</mat-toolbar>
+</div>
+
+
+<app-characters-list></app-characters-list>

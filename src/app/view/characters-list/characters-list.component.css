@@ -1,0 +1,24 @@
+
+
+
+
+.display-cards {
+   
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.btn-more-info{
+    border: 1px solid black;
+    float: right;
+
+}
+
+.card-style{
+    background-color: #fcf198;
+    border: solid 2px #99d9d9 ;
+    margin: 28px;
+
+    
+}
