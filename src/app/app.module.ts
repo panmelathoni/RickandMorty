@@ -14,7 +14,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -37,6 +37,7 @@ import { CharactersListComponent } from './view/characters-list/characters-list.
     MatFormFieldModule,
     NoopAnimationsModule,
     HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [PersonagensService, HttpClientModule],
   bootstrap: [AppComponent],

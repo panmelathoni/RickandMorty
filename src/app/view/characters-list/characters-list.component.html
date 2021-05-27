@@ -1,19 +1,33 @@
 
-<div class="display-cards">
-    
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+      <div fxFlex="25%"  *ngFor="let listaPersonagem of listaPersonagens.results" >
+
         <mat-card    
         class="card-style"
           focus
           tabindex="1"
-          *ngFor="let listaPersonagem of listaPersonagens.results"
+          
         >
           <mat-card-header>
             <mat-card-title>Name : {{ listaPersonagem.name }}</mat-card-title>
             <mat-card-subtitle> Status: {{ listaPersonagem.status }}</mat-card-subtitle>
           </mat-card-header>
-          <img mat-card-img src="{{ listaPersonagem.image }}" />
-          <button mat-button class="btn-more-info" color="primary" (click)="moreInfo()"> More info</button>
+
+          <div fxLayout="row" fxLayoutAlign="center" >
+            <img mat-card-img class="img-dimension" src="{{ listaPersonagem.image }}" />
+          </div>
+         
+          <div fxLayout="row" fxLayoutAlign="end center" >
+            <button mat-button  color="primary" class="btn-more-info" (click)="moreInfo()"> More Info</button>
+          </div>
+         
         </mat-card>
+      </div>
+
+    </div>
+  
+
         <div>
 
           <mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons
@@ -24,7 +38,7 @@
     
     </div>   
 
-
+ 
 <!-- 
 
     <div class="mat-elevation-z8">

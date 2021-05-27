@@ -1,26 +1,19 @@
 
 
-.toolbar {
-    /* background-color: pink; */
-    /* background-color: #141532; */
-    color: #00a6bd ;
-    font-size: 2.5rem;
-    font-family: 'Squada One', cursive;
+
+
+
+.toolbar { 
+    color: #7edfdf ;
+    font-style: italic;   
+    font-size: 3rem;
+    font-family: 'Galindo', cursive;
 }
 
 
 
 .search-container {
-        width: 100%;
-        height: 90px;
-        
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 4;
+      
 }
 
 .search-input {
