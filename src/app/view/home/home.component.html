@@ -1,5 +1,6 @@
 <div class="toolbar-container" fxLayout="row" fxLayoutAlign="center">
   
+  <button mat-button (click)="openSnackBar('eu sou terrivel, vou lhe dizer')" ></button>
 
       <mat-toolbar class="toolbar">
 
@@ -9,13 +10,14 @@
           </div>
     
           
-            <div fxFlex="50%" fxLayoutAlign="end center">
+            <div fxFlex="50%" fxLayoutAlign="end center" class="btn-container">
               
-              <form routerLink class="search-form" (ngSubmit)="onSubmit()">
+              <form routerLink class="search-form" >
+                <label>sua busca retornou {{countCharacterSearch}} </label>
+                <input class="search-input" type="text" name="search" id="search" (keyup)="onKey($event)" [(ngModel)]="searchFromCharacterList" placeholder="Search Characters" />
                 
-                <input class="search-input" type="text" name="search" ngModel placeholder="Search Characters" />
+                <button type="button" class="search-button"  (click)="searchCharacter()" >Search</button>
                 
-                <button class="search-button">Search</button>
               </form>
             </div>
      
@@ -23,5 +25,4 @@
       </mat-toolbar>
     </div>
 
-
-<app-characters-list></app-characters-list>
+    

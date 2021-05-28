@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ListaPersonagemModel } from './model/listapersonagens.model';
 
@@ -19,5 +19,6 @@ export class PersonagensService {
    return this.http.get<ListaPersonagemModel>(`https://rickandmortyapi.com/api/character?page=${pageNumber}`)
   }
 
- 
+
 }
+

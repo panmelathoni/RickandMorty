@@ -13,6 +13,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+import { FormsModule } from '@angular/forms';
+
+import { SearchFilterPipe } from './search-filter.pipe';
+
 
 import { FlexLayoutModule } from '@angular/flex-layout'
 
@@ -22,8 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PersonagensService } from './personagens.service';
 import { CharactersListComponent } from './view/characters-list/characters-list.component';
 
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CharactersListComponent],
+  declarations: [AppComponent, HomeComponent, CharactersListComponent, SearchFilterPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,9 +42,11 @@ import { CharactersListComponent } from './view/characters-list/characters-list.
     MatGridListModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatSnackBarModule,
     NoopAnimationsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [PersonagensService, HttpClientModule],
   bootstrap: [AppComponent],
