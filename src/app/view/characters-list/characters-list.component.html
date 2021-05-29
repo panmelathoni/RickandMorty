@@ -1,5 +1,5 @@
 <div class="content">
-  <label>Você digitou: {{search}} </label>
+  
 
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
       <div fxFlex="25%"  *ngFor="let listaPersonagem of listaPersonagens.results" >
@@ -11,8 +11,8 @@
           
         >
           <mat-card-header>
-            <mat-card-title>Name : {{ listaPersonagem.name }}</mat-card-title>
-            <mat-card-subtitle> Status: {{ listaPersonagem.status }}</mat-card-subtitle>
+            <mat-card-title class="card-title">Name : {{ listaPersonagem.name }}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle"> Status: {{ listaPersonagem.status }}</mat-card-subtitle>
           </mat-card-header>
 
           <div fxLayout="row" fxLayoutAlign="center" >
@@ -20,7 +20,7 @@
           </div>
          
           <div fxLayout="row" fxLayoutAlign="end center" >
-            <button mat-button  color="primary" class="btn-more-info" (click)="moreInfo()"> More Info</button>
+            <button mat-button  color="primary" class="btn-more-info" (click)="moreInfo()"> <span class="more-info">More Info </span> </button>
           </div>
          
         </mat-card>
@@ -31,7 +31,8 @@
 
         <div>
 
-          <mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons
+          <mat-paginator class="paginator-style"
+          [pageSizeOptions]="[20]" showFirstLastButtons
          (page)="getServerData($event)"
          [pageIndex]="pageIndex"
          [length]="listaPersonagens.info.count"></mat-paginator>
@@ -40,43 +41,3 @@
     </div>   
 
  
-<!-- 
-
-    <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="listaPersonagens.results">
-    
-        
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-    
-        
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef> Status </th>
-          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-        </ng-container>
-    
-     
-        <ng-container matColumnDef="image">
-          <th mat-header-cell *matHeaderCellDef> Image </th>
-          <td mat-cell *matCellDef="let element"> 
-          <img mat-card-img src="{{ element.image }}" />
-            </td>
-        </ng-container>
-    
-      
-        <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef> Symbol </th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-        </ng-container>
-    
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    
-      <mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons
-       (page)="getServerData($event)"
-       [pageIndex]="pageIndex"
-       [length]="listaPersonagens.info.count"></mat-paginator>
-    </div>  -->

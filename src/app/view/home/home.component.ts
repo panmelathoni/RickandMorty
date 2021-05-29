@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 
 @Component({
@@ -8,9 +8,10 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  
   public search: string = '';
 
-  constructor(private _snackBar: MatSnackBar) {}
+  constructor() {}
 
   @Input() searchFromCharacterList: string;
   @Input() countCharacterSearch: number;
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
     this.searchEvent.emit(this.search)
     console.log("click btn", this.search);
     
+    
   }
 
   onKey(event){
@@ -34,10 +36,7 @@ export class HomeComponent implements OnInit {
     
   }
 
-  openSnackBar(message: string) {
-    this._snackBar.open(message);
-    console.log(message)
-    }
+  
   }
 
 

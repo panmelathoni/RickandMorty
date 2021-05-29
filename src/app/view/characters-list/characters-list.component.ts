@@ -51,7 +51,7 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
        
         
         this.listaPersonagens = personagens;
-        setTimeout( () => {this.countEvent.emit(this.listaPersonagens.info.count);}, 2000);
+        setTimeout( () => {this.countEvent.emit(this.listaPersonagens.info.count);}, 1000);
         
       },
       (err) => {
