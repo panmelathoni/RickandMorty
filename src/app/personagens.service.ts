@@ -13,12 +13,13 @@ export class PersonagensService {
 
   //Buscar todos os personagens
 
-  getPagedCharacters(pageNumber: number): Observable<ListaPersonagemModel>{
+  getPagedCharacters(pageNumber: number, name: string): Observable<ListaPersonagemModel>{
     console.log(pageNumber, "pageNumber");
-    
-   return this.http.get<ListaPersonagemModel>(`https://rickandmortyapi.com/api/character?page=${pageNumber}`)
+    let urlComplement = name !== "" ? "&name=" + name : "";
+ 
+   return this.http.get<ListaPersonagemModel>(`https://rickandmortyapi.com/api/character?page=${pageNumber}${urlComplement}`)
   }
-
 
 }
 
+ 

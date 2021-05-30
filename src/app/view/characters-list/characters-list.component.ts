@@ -2,6 +2,7 @@ import { AfterViewInit, Component, Input, OnInit, Output, ViewChild, EventEmitte
 import { MatCard } from '@angular/material/card';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 import { InfoModel } from 'src/app/model/info.model';
 import { ListaPersonagemModel } from 'src/app/model/listapersonagens.model';
@@ -16,6 +17,8 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
 
   public pageIndex = 1;
 
+  public searchContent = "";
+
 
  @Input() search: string;
  
@@ -29,7 +32,7 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
 
   listaPersonagens: ListaPersonagemModel = new ListaPersonagemModel();
 
-  constructor(private personagensService: PersonagensService) {}
+  constructor(private personagensService: PersonagensService, private router: Router) {}
 
 
   
@@ -41,12 +44,12 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
   
   ngOnInit(): void {
     this.listaPersonagens.info = new InfoModel();
-    this.getPagedCharacters(this.pageIndex);
+    this.getPagedCharacters(this.pageIndex, "");
 
   }
 
-  getPagedCharacters(pageNumber: number) {
-    this.personagensService.getPagedCharacters(pageNumber).subscribe(
+  getPagedCharacters(pageNumber: number, name: string) {
+    this.personagensService.getPagedCharacters(pageNumber, name).subscribe(
       (personagens) => {
        
         
@@ -62,19 +65,28 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
 
 
   getServerData(event){
-    console.log("bunda rachada", event);
-    this.getPagedCharacters(event.pageIndex +1)
+    
+    this.getPagedCharacters(event.pageIndex +1, this.searchContent)
+   console.log(name);
+   
+   
     
   }
 
   moreInfo(){
     console.log("bundis");
+      this.router.navigate(['/moreInfo']);
+  
     
   }
 
-  mustSearchFor(event)
+  mustSearchFor(name)
   {
-    console.log("must search from app ", event);
+    this.searchContent = name;
+    
+    this.getPagedCharacters(this.pageIndex, name);
+
+    console.log("must search from app ", this.searchContent);
   }
 
 

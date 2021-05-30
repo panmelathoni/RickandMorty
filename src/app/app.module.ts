@@ -27,10 +27,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonagensService } from './personagens.service';
 import { CharactersListComponent } from './view/characters-list/characters-list.component';
+import { MoreInformationComponent } from './view/more-information/more-information.component';
+import { DashboardComponent } from './view/dashboard/dashboard.component';
+
+
+
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CharactersListComponent, SearchFilterPipe],
+  declarations: [AppComponent, HomeComponent, CharactersListComponent, SearchFilterPipe, MoreInformationComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,6 +52,7 @@ import { CharactersListComponent } from './view/characters-list/characters-list.
     HttpClientModule,
     FlexLayoutModule,
     FormsModule
+  
   ],
   providers: [PersonagensService, HttpClientModule],
   bootstrap: [AppComponent],

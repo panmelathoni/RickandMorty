@@ -1,0 +1,4 @@
+<app-home  [countCharacterSearch]='count' (searchEvent)='updateSearch($event)'></app-home>
+
+<!-- aqui estao os eventos do output do character-list -->
+<app-characters-list  [search]='search'  (searchEvent)='updateSearch($event)' (countEvent)='updateCount($event)'></app-characters-list>

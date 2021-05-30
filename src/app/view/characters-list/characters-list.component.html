@@ -20,7 +20,14 @@
           </div>
          
           <div fxLayout="row" fxLayoutAlign="end center" >
-            <button mat-button  color="primary" class="btn-more-info" (click)="moreInfo()"> <span class="more-info">More Info </span> </button>
+            <!-- <button mat-button  color="primary" class="btn-more-info" > 
+              <a routerLink='moreInfo'
+              class="more-info"> More Info</a>
+              </button> -->
+
+            <button mat-button  color="primary" class="btn-more-info" (click)=moreInfo()>
+              <span class="more-info"> More Info</span>
+              </button>
           </div>
          
         </mat-card>
@@ -41,3 +48,4 @@
     </div>   
 
  
+   
