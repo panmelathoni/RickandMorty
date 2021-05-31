@@ -12,20 +12,31 @@
           </div>
     
           
+          <!-- <div fxFlex="25%" fxLayoutAlign="start center" >
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="alive">Alive</mat-radio-button>
+              <mat-radio-button value="dead">Dead 2</mat-radio-button>
+              <mat-radio-button value="others"> Others</mat-radio-button>
+            </mat-radio-group>   
+          </div> -->
+
+
             <div fxFlex="50%" fxLayoutAlign="end center" class="btn-container">
               
-              <form routerLink class="search-form" >
-                
+              <form routerLink class="search-form" >   
+                         
                 <input class="search-input" type="text" name="search" id="search" (keyup)="onKey($event)" [(ngModel)]="searchFromCharacterList" placeholder="Search Characters" />
-                
 
                   <button type="button" class="search-button"  (click)="searchCharacter()" >Search</button>
+                  
+                  
                   <p fxLayoutAlign="end " class="count-found-result"> Characters Found: {{countCharacterSearch}}  </p>
-             
+                 
                 
               </form>
             </div>
      
+            
    
       </mat-toolbar>
     </div>

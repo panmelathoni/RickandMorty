@@ -19,6 +19,7 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
 
   public searchContent = "";
 
+  
 
  @Input() search: string;
  
@@ -28,9 +29,12 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
   displayedColumns: string[] = ['name', 'status', 'image'];
   dataSource = new MatTableDataSource<MatCard>();
 
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   listaPersonagens: ListaPersonagemModel = new ListaPersonagemModel();
+
+  public characterId;
 
   constructor(private personagensService: PersonagensService, private router: Router) {}
 
@@ -73,9 +77,9 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
     
   }
 
-  moreInfo(){
-    console.log("bundis");
-      this.router.navigate(['/moreInfo']);
+  moreInfo(id : number){
+    console.log(id, "moreInfo");
+      this.router.navigate(['/moreInfo', id]);
   
     
   }

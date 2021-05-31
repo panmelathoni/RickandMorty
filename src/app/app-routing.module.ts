@@ -6,7 +6,7 @@ import { MoreInformationComponent } from './view/more-information/more-informati
 
 const routes: Routes = [
   { path: '', component: DashboardComponent},
-  { path: 'moreInfo', component: MoreInformationComponent}
+  { path: 'moreInfo/:id', component: MoreInformationComponent} //com uso do id eu digo pra rota que ela vai receber um parametro id
 ];
 
 @NgModule({

@@ -16,7 +16,9 @@
     font-family: 'Shadows Into Light', cursive;
 }
 
-
+.select-field {
+    width: 105px;
+}
 
 .search-input {
     margin-left: 10px;
@@ -53,9 +55,9 @@ color: #3f51b5;
 }
 
 .count-found-result{
-    font-size: 15px;
+    font-size: 13px;
     padding-left: 10px;
-    color:#fcf198;
+    color:#7edfdf;
 }
 
 

@@ -20,12 +20,7 @@
           </div>
          
           <div fxLayout="row" fxLayoutAlign="end center" >
-            <!-- <button mat-button  color="primary" class="btn-more-info" > 
-              <a routerLink='moreInfo'
-              class="more-info"> More Info</a>
-              </button> -->
-
-            <button mat-button  color="primary" class="btn-more-info" (click)=moreInfo()>
+            <button mat-button  color="primary" class="btn-more-info" (click)="moreInfo(listaPersonagem.id)">
               <span class="more-info"> More Info</span>
               </button>
           </div>
@@ -35,7 +30,6 @@
 
     </div>
   
-
         <div>
 
           <mat-paginator class="paginator-style"

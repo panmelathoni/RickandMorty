@@ -1,0 +1,62 @@
+
+.content {
+    padding: 16px;
+    margin-top: 20px;
+
+}
+
+.heading-more-info{
+    display: flex;
+    justify-content: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 56px;
+    color: #7edfdf;
+}
+
+
+.card-title{
+    
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
+
+}
+
+.card-subtitle {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
+}
+
+
+
+.btn-back-home{
+
+   
+    position: relative;
+    margin: 30px;
+    opacity: 0.9;
+    
+}
+    .btn-back-home:hover {
+        color: #3f51b5;
+                background-color: #fff;
+                border: 1px solid #3f51b5;
+        }
+
+.card-style{
+    
+    background-color: #fcf198;
+    border: solid 5px #99d9d9 ;
+    margin: 28px;  
+}
+
+
+/* make image responsive inside div */
+.img-dimension{
+    max-width: 100%;
+    height: auto;
+}
+
+.paginator-style {
+    background-color: #dc7b35;
+}
+
