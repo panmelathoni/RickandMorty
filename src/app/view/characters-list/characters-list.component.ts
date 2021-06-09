@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit, Output, ViewChild, EventEmitter } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { MatCard } from '@angular/material/card';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -28,6 +29,7 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
 
   displayedColumns: string[] = ['name', 'status', 'image'];
   dataSource = new MatTableDataSource<MatCard>();
+  
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -51,6 +53,8 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
     this.getPagedCharacters(this.pageIndex, "");
 
   }
+
+  
 
   getPagedCharacters(pageNumber: number, name: string) {
     this.personagensService.getPagedCharacters(pageNumber, name).subscribe(

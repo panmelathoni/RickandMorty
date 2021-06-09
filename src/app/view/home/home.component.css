@@ -1,10 +1,12 @@
 
 
-
+.toolbar-container{
+    padding-top: 60px;
+}
 
 
 .toolbar { 
-    color: #7edfdf ;
+    color: #9cd1e6;;
     /* font-style: italic;    */
     
     background-color: #dc7b35;
@@ -57,7 +59,16 @@ color: #3f51b5;
 .count-found-result{
     font-size: 13px;
     padding-left: 10px;
-    color:#7edfdf;
+    color: #9cd1e6;
 }
 
 
+.option-btn {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+.field-btn{
+    padding: 10px; 
+}

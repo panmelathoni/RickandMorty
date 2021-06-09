@@ -11,14 +11,15 @@
           <span class="title"> Rick and Morty</span>
           </div>
     
+          <!-- search live or dead -->
           
-          <!-- <div fxFlex="25%" fxLayoutAlign="start center" >
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="alive">Alive</mat-radio-button>
-              <mat-radio-button value="dead">Dead 2</mat-radio-button>
-              <mat-radio-button value="others"> Others</mat-radio-button>
+          <div fxFlex="25%" fxLayoutAlign="start center" >
+            <mat-radio-group aria-label="Select an option" class="option-btn" [(ngModel)]="status">
+              <mat-radio-button value="alive" class="field-btn">Alive</mat-radio-button>
+              <mat-radio-button value="dead" class="field-btn">Dead</mat-radio-button>
+              <mat-radio-button value="others" class="field-btn"> Unkwon</mat-radio-button>
             </mat-radio-group>   
-          </div> -->
+          </div>
 
 
             <div fxFlex="50%" fxLayoutAlign="end center" class="btn-container">

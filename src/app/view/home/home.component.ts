@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
   
   public search: string = '';
 
+  public status: string;
+
+  
   constructor() {}
 
   @Input() searchFromCharacterList: string;
