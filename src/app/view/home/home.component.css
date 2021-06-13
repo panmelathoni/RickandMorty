@@ -2,25 +2,25 @@
 
 .toolbar-container{
     padding-top: 60px;
+    width: 100vw;
+    
 }
 
 
 .toolbar { 
     color: #9cd1e6;;
-    /* font-style: italic;    */
-    
-    background-color: #dc7b35;
+    background-color: transparent;
   
 }
 
 .title {
     font-size: 5rem;
     font-family: 'Shadows Into Light', cursive;
+    color: #9cd1e6;
+    margin-left: 60px;
 }
 
-.select-field {
-    width: 105px;
-}
+
 
 .search-input {
     margin-left: 10px;
@@ -28,47 +28,99 @@
     width: 300px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     outline: none;
     border: none;
 }
 
-button{
-     outline: none;
-    border: none;
-    background-color: #3f51b5;
-    padding: 10px;
-    border-left: 1px solid rgba(0,0,0, 0.3);
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    color: #fff;
-    font-weight: 700;
-    transition-duration: 0.3s ;
-    cursor: pointer;
-}
 
-button:hover {
-color: #3f51b5;
-        background-color: #fff;
-        border: 1px solid #3f51b5;
-}
 
-.btn-container{
-    padding-right: 30px;
+.search-container{
+    padding-left: 360px !important;
+    
 }
 
 .count-found-result{
-    font-size: 13px;
+    font-size: 16px;
     padding-left: 10px;
-    color: #9cd1e6;
+    
+    color: #fff;
+
 }
 
 
 .option-btn {
     font-family: 'Shadows Into Light', cursive;
-    font-size: 15px;
+    font-size: 5px;
     margin-left: 10px;
+    
+    
 }
 
 .field-btn{
-    padding: 10px; 
+    padding:5px; 
+    font-size: 13px;
+    
+    color: #fff;
+    
+} 
+
+
+.radio-btn-content{
+    
+    width: auto;
+    height: 35px;
+    /* background-color:#fff; */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    border: none;
+
 }
+
+
+.icon-menu{
+    font-size: 5rem;
+    color: #9cd1e6;
+    margin-right:15px ;
+}
+
+.icon-menu:hover {
+    color: #fff;
+}
+
+.btn-menu{
+    padding-right: 35px;
+}
+
+.link{
+    text-decoration: none;
+
+}
+
+
+
+.link:link {
+    text-decoration: none;
+  }
+  
+  .link:visited {
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .link:active {
+    text-decoration: underline;
+  }
+
+  :host ::ng-deep .mat-radio-outer-circle{
+    color: #fff;
+    background-color: #fff;
+    border-color: #fff;
+  }

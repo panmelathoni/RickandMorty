@@ -6,10 +6,9 @@ import { MoreInformationComponent } from './view/more-information/more-informati
 import { WelcomeComponent } from './view/welcome/welcome.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent},
-  { path: 'moreInfo/:id', component: MoreInformationComponent}, //com uso do id eu digo pra rota que ela vai receber um parametro id
-  { path: 'welcome', component: WelcomeComponent},
-  { path: 'home', component: HomeComponent},
+  { path: '', component: WelcomeComponent},
+  { path: 'moreInfo/:id', component: MoreInformationComponent}, 
+  { path: 'searchCharacters', component: DashboardComponent},
 
 
 ];

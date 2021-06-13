@@ -1,20 +1,6 @@
 <div class="content">
   
-  <!-- <div class="radio-btn-group">
-    <form  (ngSubmit)="statusSearch()">
 
-      <mat-radio-group aria-label="Select an option"> 
-        <mat-radio-button value="alive" formControlName="alive">Alive</mat-radio-button>
-        <mat-radio-button value="dead" formControlName="dead">Dead </mat-radio-button>
-        <mat-radio-button value="unknown" formControlName="unknown">Unknown</mat-radio-button>
-      </mat-radio-group>
-
-      <button mat-button type="submit"> Submit
-
-      </button>
-    </form>
-   
-  </div> -->
 
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
       <div fxFlex="25%"  *ngFor="let listaPersonagem of listaPersonagens.results" >
@@ -35,7 +21,7 @@
           </div>
          
           <div fxLayout="row" fxLayoutAlign="end center" >
-            <button mat-button  color="primary" class="btn-more-info" (click)="moreInfo(listaPersonagem.id)">
+            <button mat-raised-button color="primary" class="btn-more-info" (click)="moreInfo(listaPersonagem.id)">
               <span class="more-info"> More Info</span>
               </button>
           </div>

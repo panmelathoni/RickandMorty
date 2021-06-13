@@ -1,0 +1,15 @@
+
+.content {
+    position: relative;
+    /* height: 100vh;
+   width: 100vw; 
+    /* adicionando imagem de fundo */
+    background: url('../../../assets/background.jpg');
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+    background-color: #fff;
+    background-size: cover;
+    margin-top: 0 !important;
+    padding-top: 35px !important;
+    
+}

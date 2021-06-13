@@ -13,6 +13,7 @@ export class MoreInformationComponent implements OnInit {
 
   public characterId;
   public episodeNumbers: string [] = []; 
+  public statusCharacter: string;
 
   
   personagens: PersonagemModel = new PersonagemModel();
@@ -54,10 +55,14 @@ export class MoreInformationComponent implements OnInit {
     );
   }
 
+ 
   backHome(){
     this.router.navigate(['']);
   }
 
+  cleanBtn(){
+    this.router.navigate(['searchCharacters']);
 
+  }
 
 }

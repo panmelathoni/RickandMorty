@@ -8,33 +8,43 @@
 
         
           <div fxFlex="50%" fxLayoutAlign="start center" >
+
+        <button mat-icon-button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon class="icon-menu">menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <!-- redireciona para o welcome -->
+          <button mat-menu-item><a routerLink="" class="link" >Home</a></button> 
+          <!-- redireciona para procurar personagens -->
+          <button mat-menu-item><a routerLink="searchCharacters" class="link">Characters</a></button>
+          <!-- redireciona para videos do youtube com os melhores -->
+          <button mat-menu-item><a routerLink="/videos" class="link">Best Moments</a></button>
+        </mat-menu>
           <span class="title"> Rick and Morty</span>
           </div>
     
           <!-- search live or dead -->
           
-          <div fxFlex="25%" fxLayoutAlign="start center" >
-            <mat-radio-group aria-label="Select an option" class="option-btn" [(ngModel)]="status">
-              <mat-radio-button value="alive" class="field-btn">Alive</mat-radio-button>
-              <mat-radio-button value="dead" class="field-btn">Dead</mat-radio-button>
-              <mat-radio-button value="others" class="field-btn"> Unkwon</mat-radio-button>
-            </mat-radio-group>   
-          </div>
+            <div fxLayout="column"  fxFlex="50%" fxLayoutAlign="end center" class="search-container">
 
-
-            <div fxFlex="50%" fxLayoutAlign="end center" class="btn-container">
               
-              <form routerLink class="search-form" >   
-                         
-                <input class="search-input" type="text" name="search" id="search" (keyup)="onKey($event)" [(ngModel)]="searchFromCharacterList" placeholder="Search Characters" />
+                <mat-radio-group  class="option-btn" (change)="searchStatus($event)" [(ngModel)]="status" >
+                  <mat-radio-button color="primary" value="alive" class="field-btn">Alive</mat-radio-button>
+                  <mat-radio-button color="primary"  value="dead" class="field-btn">Dead</mat-radio-button>
+                  <mat-radio-button  color="primary" value="unknown" class="field-btn"> Unknown</mat-radio-button>
+                  <mat-radio-button  color="primary" value="all" class="field-btn" checked> All</mat-radio-button>
+                </mat-radio-group>                  
+              
 
-                  <button type="button" class="search-button"  (click)="searchCharacter()" >Search</button>
-                  
-                  
-                  <p fxLayoutAlign="end " class="count-found-result"> Characters Found: {{countCharacterSearch}}  </p>
+              <form  >   
+                         
+                <input class="search-input" type="text" name="searchName" id="searchName" (keyup)="onKey($event)" [(ngModel)]="searchFromCharacterList" placeholder="Search Characters" />
+
+                  <p fxLayoutAlign="end " class="count-found-result"> {{countCharacterSearch}}  Characters Found  </p>
                  
-                
               </form>
+              
+             
             </div>
      
             

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { CharactersListComponent } from '../characters-list/characters-list.component';
 
 @Component({
@@ -9,6 +10,7 @@ import { CharactersListComponent } from '../characters-list/characters-list.comp
 export class DashboardComponent implements OnInit {
   public search;
   public count;
+  public status;
   
   //estuda isso!!!!
   @ViewChild(CharactersListComponent) characterComponentChild :CharactersListComponent;
@@ -23,13 +25,20 @@ export class DashboardComponent implements OnInit {
     //preste atencao que isso basicamente substitui o que fizemos com os eventos
     //mas geralmente eh usado quando queremos chamar metodos dos componentes e
     //nao passar eventos e inputs entre eles
-    this.characterComponentChild.mustSearchFor(event)
+    this.characterComponentChild.searchContent = event;
+    this.characterComponentChild.mustSearchFor()
   }
   
   updateCount(event){
     this.count = event
     console.log("updateCount", event);
   
+  }
+
+  updateStatus(event) {
+    this.status = event;
+    this.characterComponentChild.statusContent = event;
+    this.characterComponentChild.mustSearchFor()
   }
 
 }

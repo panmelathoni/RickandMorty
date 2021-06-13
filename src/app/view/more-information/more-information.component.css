@@ -1,62 +1,163 @@
-
 .content {
-    padding: 16px;
-    margin-top: 20px;
+  padding: 16px;
+  margin-top: 20px;
+  position: relative;  
+  width: 100vw;
+  /* adicionando imagem de fundo */
+  background: url('../../../assets/background.jpg');
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-color: #fff;
+  background-size: cover;
+  margin-top: 0 !important;
+  padding-top: 35px !important;
+  padding-right: 50px;
+  padding-bottom: 110px;
 
 }
 
-.heading-more-info{
-    display: flex;
-    justify-content: center;
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 56px;
-    color: #7edfdf;
+.toolbar-content {
+  background-color: transparent;
+ 
 }
 
 
-.card-title{
-    
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 24px;
+.card-container {
+  margin-top: 160px;
+ 
+}
+
+
+.title {
+  padding-left: 25px;
+  font-size: 7rem;
+  font-family: 'Shadows Into Light', cursive;
+margin-top: 60px;
+  color: #9cd1e6;
+
+}
+
+.icon-menu {
+  font-size: 5rem;
+  color: #9cd1e6;
+  margin-right: 35px;
+margin-top: 45px;
+
+}
+
+.icon-menu:hover {
+  color: #fff;
+}
+
+.btn-menu {
+  padding-right: 35px;
+}
+
+.article {
+  padding-top: 150px;
+  padding-left: 20px;
+  font-family: 'Odibee Sans', cursive;
+  font-size: 20px;
+}
+
+.card-name-field{
+  padding-left: 25px;
+ 
+}
+
+.text-container {
+  /* border: 1px solid black; */
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  font-style: italic;
+  font-weight: 400;
+  border-style: outset #9cd1e6;
+  border-radius: 2%;
+}
+
+.link {
+  text-decoration: none;
+
+}
+
+
+
+.link:link {
+  text-decoration: none;
+}
+
+.link:visited {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:active {
+  text-decoration: underline;
+}
+
+.heading-more-info {
+  display: flex;
+  justify-content: center;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 56px;
+  color: black;
+  margin-top: 45px;
+}
+
+
+.card-title {
+
+  margin-top: 60px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 24px;
 
 }
 
 .card-subtitle {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 24px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 24px;
 }
 
 
 
-.btn-back-home{
+.btn-back-home {
 
-   
-    position: relative;
-    margin: 30px;
-    opacity: 0.9;
-    
+
+  position: relative;
+  margin: 30px;
+  opacity: 0.9;
+
 }
-    .btn-back-home:hover {
-        color: #3f51b5;
-                background-color: #fff;
-                border: 1px solid #3f51b5;
-        }
 
-.card-style{
-    
-    background-color: #fcf198;
-    border: solid 5px #99d9d9 ;
+.btn-back-home:hover {
+  color: #3f51b5;
+  background-color: #fff;
+  border: 1px solid #3f51b5;
+}
+
+.card-style {
+
+  background-color: rgba(255, 255, 255, 0.6); 
+    border-width:3px;  
+    border-style:outset;
+    border-color: #9cd1e6;  
     margin: 28px;  
 }
 
 
 /* make image responsive inside div */
-.img-dimension{
-    max-width: 100%;
-    height: auto;
+.img-dimension {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  border-width: 2px;
+  border-color: black;
+  border-style: outset;
+ 
 }
 
-.paginator-style {
-    background-color: #dc7b35;
-}
+
 

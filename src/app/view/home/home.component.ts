@@ -10,17 +10,16 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   
-  public search: string = '';
+  public searchName: string = '';
+  public status: string = 'all';
 
-  public status: string;
-
-  
   constructor() {}
 
   @Input() searchFromCharacterList: string;
   @Input() countCharacterSearch: number;
 
   @Output() searchEvent = new EventEmitter();
+  @Output() statusEvent = new EventEmitter();
 
 
   ngOnInit(): void {
@@ -28,9 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchCharacter(){
-    this.searchEvent.emit(this.search)
-    console.log("click btn", this.search);
-   
+    this.searchEvent.emit(this.searchName)   
   }
 
   onKey(event){
@@ -39,7 +36,10 @@ export class HomeComponent implements OnInit {
     
   }
 
-  
+  searchStatus(event){
+    this.statusEvent.emit(event.value);
+  }
+
   }
 
 

@@ -19,10 +19,12 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
   public pageIndex = 1;
 
   public searchContent = "";
+  public statusContent = "all";
 
   
 
  @Input() search: string;
+ @Input() status: string;
  
  //eventos de saida 
  @Output() countEvent = new EventEmitter();
@@ -37,6 +39,7 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
   listaPersonagens: ListaPersonagemModel = new ListaPersonagemModel();
 
   public characterId;
+  public characterStatus;
 
   constructor(private personagensService: PersonagensService, private router: Router) {}
 
@@ -50,14 +53,14 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
   
   ngOnInit(): void {
     this.listaPersonagens.info = new InfoModel();
-    this.getPagedCharacters(this.pageIndex, "");
+    this.getPagedCharacters(this.pageIndex, "", "");
 
   }
 
   
 
-  getPagedCharacters(pageNumber: number, name: string) {
-    this.personagensService.getPagedCharacters(pageNumber, name).subscribe(
+  getPagedCharacters(pageNumber: number, name: string, status: string) {
+    this.personagensService.getPagedCharacters(pageNumber, name, status).subscribe(
       (personagens) => {
        
         
@@ -74,8 +77,8 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
 
   getServerData(event){
     
-    this.getPagedCharacters(event.pageIndex +1, this.searchContent)
-   console.log(name);
+    this.getPagedCharacters(event.pageIndex +1, this.searchContent, this.statusContent)
+   console.log(name, status);
    
    
     
@@ -88,16 +91,10 @@ export class CharactersListComponent implements OnInit, AfterViewInit  {
     
   }
 
-  mustSearchFor(name)
+  mustSearchFor()
   {
-    this.searchContent = name;
-    
-    this.getPagedCharacters(this.pageIndex, name);
-
-    console.log("must search from app ", this.searchContent);
+    this.getPagedCharacters(this.pageIndex, this.searchContent, this.statusContent);
   }
-
-
 }
 
 
