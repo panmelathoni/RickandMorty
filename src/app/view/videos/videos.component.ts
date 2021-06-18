@@ -5,6 +5,7 @@ import { YoutubeModel } from 'src/app/model/Youtube/youtube.model';
 import {DomSanitizer} from '@angular/platform-browser';
 
 import { YoutubeService } from 'src/app/youtube.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,8 +16,9 @@ import { YoutubeService } from 'src/app/youtube.service';
 export class VideosComponent implements OnInit {
   videosModel: VideosModel = new VideosModel();
   dataUrl;
+ 
 
-  constructor(private youTubeService: YoutubeService, private sanitizer: DomSanitizer) {
+  constructor(private youTubeService: YoutubeService, private sanitizer: DomSanitizer, private router: Router, ) {
    
   }
 
@@ -33,6 +35,11 @@ export class VideosComponent implements OnInit {
 
     this.getVideos();
     console.log('videos model', this.videosModel);
+  }
+
+  cleanBtn(){
+    this.router.navigate(['searchCharacters']);
+
   }
 
   getVideos() {

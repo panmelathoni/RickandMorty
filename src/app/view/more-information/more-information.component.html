@@ -5,11 +5,9 @@
   
       <mat-toolbar class="toolbar-content">
 
-        <div  fxFlex="50%" fxLayoutAlign="start center"  class="btn-menu">
-          <span class="title">Rick and Morty</span>
-       </div>
+        
 
-        <div fxFlex="50%" fxLayoutAlign="end center"  >          
+        <div fxFlex="50%" fxLayoutAlign="start center"  >          
           <button mat-icon-button mat-button [matMenuTriggerFor]="menu">
             <mat-icon class="icon-menu">menu</mat-icon>
           </button>
@@ -19,11 +17,13 @@
             <!-- redireciona para procurar personagens -->
             <button mat-menu-item (click)="cleanBtn()" class="link">Search Characters</button>
             <!-- redireciona para videos do youtube com os melhores -->
-            <button mat-menu-item><a routerLink="/videos" class="link">Best Moments</a></button>
+            <button mat-menu-item><a routerLink="/videos" class="link">Videos</a></button>
           </mat-menu>  
         </div>
         
-        
+        <div  fxFlex="50%" fxLayoutAlign="end center"  class="btn-menu">
+          <span class="title">Rick and Morty</span>
+       </div>
         
       </mat-toolbar>
     </div>

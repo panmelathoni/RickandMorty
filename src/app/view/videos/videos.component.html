@@ -4,8 +4,6 @@
 
     <mat-toolbar class="toolbar-content">
       <div fxFlex="50%" fxLayoutAlign="start center">
-
-
         <button mat-icon-button mat-button [matMenuTriggerFor]="menu">
           <mat-icon class="icon-menu">menu</mat-icon>
         </button>
@@ -13,81 +11,79 @@
           <!-- redireciona para o welcome -->
           <button mat-menu-item><a routerLink="" class="link">Home</a></button>
           <!-- redireciona para procurar personagens -->
-          <button mat-menu-item><a routerLink="searchCharacters" class="link">Characters</a></button>
+          <button mat-menu-item><a (click)="cleanBtn()" class="link">Characters</a></button>
           <!-- redireciona para videos do youtube com os melhores -->
-          <button mat-menu-item><a routerLink="/videos" class="link">Best Moments</a></button>
+          <button mat-menu-item><a routerLink="/videos" class="link">Videos</a></button>
         </mat-menu>
-
-
       </div>
 
       <div fxFlex="50%" fxLayoutAlign="end center" class="btn-menu">
-
         <span class="title">Rick and Morty</span>
-
-
       </div>
-
     </mat-toolbar>
 
 
   </div>
 
-  <div fxLayout="column" fxLayoutAlign="space-around none">
-    <!-- <div *ngFor="let video of videosModel">
+  <!-- <div fxLayout="column" fxLayoutAlign="space-around none">
+    <div *ngFor="let video of videosModel">
       <div *ngFor="let item of video.youTubeModel.items">
 
 
 
 
-        <mat-card class="card-style" focus tabindex="1">
-          <mat-card-header>
-            <mat-card-title class="card-title"> Title {{ item.snippet.title}}</mat-card-title>
-            <mat-card-subtitle class="card-subtitle"> Description {{ item.snippet.description }}</mat-card-subtitle>
-          </mat-card-header>
+      <div fxLayout="row" fxLayoutAlign="center center"class="card-container">
+        <mat-card class="card-style" focus tabindex="1" fxLayout="row" fxLayoutAlign="space-around center">
+
+    
 
 
+            <div>
+              <iframe width="620" height="415" [src]="video.urlVideo | safe">
+              </iframe>
+            </div>
 
-          <div>
-            <iframe width="420" height="315"
-              [src]="video.urlVideo | safe">
-            </iframe>
-          </div>
+            <mat-card-header>
+              <mat-card-title class="card-title"> Title {{ item.snippet.title}}</mat-card-title>
+              <mat-card-subtitle class="card-subtitle"> Description {{ item.snippet.description }}</mat-card-subtitle>
+          
+            </mat-card-header>
+          </mat-card>
+    </div>
+      
 
-
-
-        </mat-card>
       </div>
 
     </div> -->
-    <div *ngFor="let allvideos of videosModel.youTubeModel" class="col-xl-3 col-md-6 mb-4">
-      <div *ngFor="let video of allvideos.items">
-        <div class="card border-0 shadow vh-50">
-          <div>
-            {{video.snippet.title}}
-            <iframe
-            *ngIf="video.id"
-            class="video-iframe"
-            type="text/html"
-            [src]="getUrl(video.id) | safe"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-          
-          </div>
 
 
-          <!-- <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
-            <img [src]="video.snippet.thumbnails.medium.url" class="card-img-top" alt="..."></a> -->
-          <div class="card-body text-center">
-            <!-- <h5 class="card-title mb-0">
-              <a href="https://www.youtube.com/watch?v={{video.id}}">{{video.snippet.title}}
-              </a>
-            </h5> -->
-            <div class="card-text text-black-50">{{video.snippet.description.slice(0, 100)}}</div>
-            <p class="card-text">{{video.snippet.description}}</p>
+
+
+  <div *ngFor="let allvideos of videosModel.youTubeModel" class="col-xl-3 col-md-6 mb-4">
+    <div *ngFor="let video of allvideos.items">
+
+
+      <div fxLayout="row" fxLayoutAlign="center center" class="card-container">
+
+        <mat-card class="card-style">
+          <div fxLayout="row" fxLayoutAlign="space-around center">
+
+            <div class="video-container">
+              <iframe *ngIf="video.id" class="video-iframe" type="text/html" [src]="getUrl(video.id) | safe"
+                frameborder="0" allowfullscreen class="video-iframe"></iframe>
+            </div>
+
+            <mat-card-header class="card-name-field">
+              <mat-card-title class="card-title">{{video.snippet.title}}</mat-card-title>
+              <mat-card-subtitle class="card-subtitle">{{video.snippet.description.slice(0, 200) + '...'}}
+              </mat-card-subtitle>
+            </mat-card-header>
+
           </div>
-        </div>
+        </mat-card>
+
       </div>
+
+
     </div>
   </div>
