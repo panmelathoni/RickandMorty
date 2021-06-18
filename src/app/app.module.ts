@@ -2,8 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './view/home/home.component';
+import { CharactersListComponent } from './view/characters-list/characters-list.component';
+import { MoreInformationComponent } from './view/more-information/more-information.component';
+import { DashboardComponent } from './view/dashboard/dashboard.component';
+import { WelcomeComponent } from './view/welcome/welcome.component';
+import { VideosComponent } from './view/videos/videos.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
@@ -30,10 +36,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 import { PersonagensService } from './personagens.service';
-import { CharactersListComponent } from './view/characters-list/characters-list.component';
-import { MoreInformationComponent } from './view/more-information/more-information.component';
-import { DashboardComponent } from './view/dashboard/dashboard.component';
-import { WelcomeComponent } from './view/welcome/welcome.component';
+import { YoutubeService } from './youtube.service';
+
 
 
 
@@ -41,7 +45,7 @@ import { WelcomeComponent } from './view/welcome/welcome.component';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CharactersListComponent, SearchFilterPipe, MoreInformationComponent, DashboardComponent, WelcomeComponent],
+  declarations: [AppComponent, HomeComponent, CharactersListComponent, SearchFilterPipe, MoreInformationComponent, DashboardComponent, WelcomeComponent, VideosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -65,7 +69,7 @@ import { WelcomeComponent } from './view/welcome/welcome.component';
     ReactiveFormsModule
   
   ],
-  providers: [PersonagensService, HttpClientModule],
+  providers: [PersonagensService, HttpClientModule, YoutubeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

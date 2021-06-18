@@ -5,8 +5,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 
-import { InfoModel } from 'src/app/model/info.model';
-import { ListaPersonagemModel } from 'src/app/model/listapersonagens.model';
+import { InfoModel } from 'src/app/model/Personagens/info.model';
+import { ListaPersonagemModel } from 'src/app/model/Personagens/listapersonagens.model';
 import { PersonagensService } from 'src/app/personagens.service';
 
 @Component({

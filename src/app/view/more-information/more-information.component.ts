@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { PersonagemModel } from 'src/app/model/personagem.model';
+import { PersonagemModel } from 'src/app/model/Personagens/personagem.model';
 import { PersonagensService } from 'src/app/personagens.service';
 
 @Component({

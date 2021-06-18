@@ -1,0 +1,63 @@
+<div class="content">
+
+  <div fxLayout="row">
+
+    <mat-toolbar class="toolbar-content">
+      <div fxFlex="50%" fxLayoutAlign="start center">
+
+
+        <button mat-icon-button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon class="icon-menu">menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <!-- redireciona para o welcome -->
+          <button mat-menu-item><a routerLink="" class="link">Home</a></button>
+          <!-- redireciona para procurar personagens -->
+          <button mat-menu-item><a routerLink="searchCharacters" class="link">Characters</a></button>
+          <!-- redireciona para videos do youtube com os melhores -->
+          <button mat-menu-item><a routerLink="/videos" class="link">Best Moments</a></button>
+        </mat-menu>
+
+
+      </div>
+
+      <div fxFlex="50%" fxLayoutAlign="end center" class="btn-menu">
+
+        <span class="title">Rick and Morty</span>
+
+
+      </div>
+
+    </mat-toolbar>
+
+
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+    <div fxFlex="25%" *ngFor="let video of videosModel">
+      <div fxFlex="25%" *ngFor="let item of video.youTubeModel.items">
+
+        <pre>{{video.youTubeModel.items}}</pre>
+
+
+        <mat-card class="card-style" focus tabindex="1">
+          <mat-card-header>
+            <mat-card-title class="card-title"> Title {{ item.snippet.title}}</mat-card-title>
+            <mat-card-subtitle class="card-subtitle"> Description {{ item.snippet.description }}</mat-card-subtitle>
+          </mat-card-header>
+
+
+
+          <div fxLayout="row" fxLayoutAlign="center" >
+            <iframe width="420" height="315"
+              src={{video.urlVideo}}>
+            </iframe>
+          </div>
+         
+
+
+        </mat-card>
+      </div>
+
+    </div>
+  </div> 
