@@ -37,6 +37,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { PersonagensService } from './personagens.service';
 import { YoutubeService } from './youtube.service';
+import { SafePipe } from './modules/safePipe';
 
 
 
@@ -45,7 +46,7 @@ import { YoutubeService } from './youtube.service';
 
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CharactersListComponent, SearchFilterPipe, MoreInformationComponent, DashboardComponent, WelcomeComponent, VideosComponent],
+  declarations: [AppComponent,SafePipe, HomeComponent, CharactersListComponent, SearchFilterPipe, MoreInformationComponent, DashboardComponent, WelcomeComponent, VideosComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

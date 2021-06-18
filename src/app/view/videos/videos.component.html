@@ -33,11 +33,11 @@
 
   </div>
 
-  <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
-    <div fxFlex="25%" *ngFor="let video of videosModel">
-      <div fxFlex="25%" *ngFor="let item of video.youTubeModel.items">
+  <div fxLayout="column" fxLayoutAlign="space-around none">
+    <!-- <div *ngFor="let video of videosModel">
+      <div *ngFor="let item of video.youTubeModel.items">
 
-        <pre>{{video.youTubeModel.items}}</pre>
+
 
 
         <mat-card class="card-style" focus tabindex="1">
@@ -48,16 +48,46 @@
 
 
 
-          <div fxLayout="row" fxLayoutAlign="center" >
+          <div>
             <iframe width="420" height="315"
-              src={{video.urlVideo}}>
+              [src]="video.urlVideo | safe">
             </iframe>
           </div>
-         
+
 
 
         </mat-card>
       </div>
 
+    </div> -->
+    <div *ngFor="let allvideos of videosModel.youTubeModel" class="col-xl-3 col-md-6 mb-4">
+      <div *ngFor="let video of allvideos.items">
+        <div class="card border-0 shadow vh-50">
+          <div>
+            {{video.snippet.title}}
+            <iframe
+            *ngIf="video.id"
+            class="video-iframe"
+            type="text/html"
+            [src]="getUrl(video.id) | safe"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          
+          </div>
+
+
+          <!-- <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+            <img [src]="video.snippet.thumbnails.medium.url" class="card-img-top" alt="..."></a> -->
+          <div class="card-body text-center">
+            <!-- <h5 class="card-title mb-0">
+              <a href="https://www.youtube.com/watch?v={{video.id}}">{{video.snippet.title}}
+              </a>
+            </h5> -->
+            <div class="card-text text-black-50">{{video.snippet.description.slice(0, 100)}}</div>
+            <p class="card-text">{{video.snippet.description}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div> 
+  </div>

@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { VideosModel } from './model/Youtube/videos.model';
 import { YoutubeModel } from './model/Youtube/youtube.model';
-import {DomSanitizer} from '@angular/platform-browser';
-
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({
   providedIn: 'root',
@@ -19,31 +18,30 @@ export class YoutubeService {
     'https://www.googleapis.com/youtube/v3/videos?id=F6Zy_mLgSNQ&key=AIzaSyDLnC3BetON-P9FEf6EtYh5p6WyOgrc2zc&part=snippet,contentDetails,statistics,status',
   ];
 
+  
 
   videosModel: VideosModel[] = [];
 
-  constructor(public http: HttpClient,  public sanitizer: DomSanitizer) {}
+  constructor(public http: HttpClient, public sanitizer: DomSanitizer) {}
 
-  getUrlVideos():VideosModel[]{
-    var retorno: VideosModel[] = [];
+  getUrlVideos(): VideosModel {
+    var retorno: VideosModel = new VideosModel();
+    retorno.youTubeModel = [];
     for (var i = 0; i < 5; i++) {
-      let item: VideosModel = new VideosModel();
+      let item: YoutubeModel = new YoutubeModel();
       item.urlVideo = this.urlVideos[i];
-      item.youTubeModel = new YoutubeModel();
-      item.youTubeModel.items = [];
-      retorno.push(item);
-      console.log(retorno, 'retorno da funçao getUrlVideos')
+      item.items = [];
+      retorno.youTubeModel.push(item);
     }
     return retorno;
-
   }
 
-  getVideosForChanel(url: string): Observable<any> {
-    return this.http.get<any>(url);
+  getVideosForChanel(url: string): Observable<YoutubeModel> {
+    return this.http.get<YoutubeModel>(url);
   }
 
-  // getTrustUrl(VideosModel.urlVideo): Observable<any>{
-  // return this.videosModel.urlVideo = this.sanitizer.bypassSecurityTrustUrl(VideosModel.urlVideo);
+  // getTrustUrl(myUrl : string): Observable<any>{
+  // return this.myUrl = this.sanitizer.bypassSecurityTrustUrl(myUrl);
 
   // }
 }

@@ -5,7 +5,7 @@ import { YoutubeModel } from 'src/app/model/Youtube/youtube.model';
 import {DomSanitizer} from '@angular/platform-browser';
 
 import { YoutubeService } from 'src/app/youtube.service';
-import { ItemsYoutubeModel } from 'src/app/model/Youtube/itemsYoutube.model';
+
 
 @Component({
   selector: 'app-videos',
@@ -13,30 +13,35 @@ import { ItemsYoutubeModel } from 'src/app/model/Youtube/itemsYoutube.model';
   styleUrls: ['./videos.component.css'],
 })
 export class VideosComponent implements OnInit {
-  videosModel: VideosModel[] = [];
-  youtubeModel: YoutubeModel;
-
-  myUrl;
+  videosModel: VideosModel = new VideosModel();
+  dataUrl;
 
   constructor(private youTubeService: YoutubeService, private sanitizer: DomSanitizer) {
-    this.myUrl = sanitizer.bypassSecurityTrustUrl(this.myUrl);
+   
+  }
+
+  getUrl(videoId: string){
+    let url = 'https://www.youtube.com/embed/'+ videoId;
+    console.log('url', url);
+    
+    return url
   }
 
   ngOnInit(): void {
     this.videosModel = this.youTubeService.getUrlVideos();
 
+
     this.getVideos();
+    console.log('videos model', this.videosModel);
   }
 
- 
-
   getVideos() {
-    this.videosModel.forEach((item) => {
+    this.videosModel.youTubeModel.forEach((item, index) => {
       this.youTubeService.getVideosForChanel(item.urlVideo).subscribe(
         (data) => {
-          //  = data;
-          item.youTubeModel = data;
-          console.log('data do get videos', item.youTubeModel);
+          this.videosModel.youTubeModel[index] = data;
+          this.videosModel.youTubeModel[index].urlVideo = item.urlVideo; 
+          console.log('index', index, 'model', this.videosModel[index]);
         },
         (err) => {
           console.log('Erro ao buscar videos', err);
